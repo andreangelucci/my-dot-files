@@ -1,0 +1,7 @@
+*
+!.gitignore
+!.bashrc
+!.bash_functions
+!.bash_aliases
+!.inputrc
+!.config/nvim/*
