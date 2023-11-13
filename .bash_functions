@@ -11,4 +11,4 @@ cd(){
     fi
 }
 
-. .private/bash_functions
+. ~/.private/bash_functions

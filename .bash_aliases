@@ -17,4 +17,4 @@ alias gd='git diff'
 
 alias gpt='sgpt'
 
-. .private/bash_aliases
+. ~/.private/bash_aliases
