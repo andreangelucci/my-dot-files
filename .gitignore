@@ -5,4 +5,5 @@
 !.bash_aliases
 !.inputrc
 !.config/nvim/
+!.tmux.conf
 *.DS_Store
