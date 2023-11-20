@@ -22,6 +22,9 @@ bind -f ~/.inputrc
 FZF_TMUX=1
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+export HISTSIZE=3000
+export HISTFILESIZE=3000
+
 # External Files
 . ~/.bash_aliases
 . ~/.bash_variables
