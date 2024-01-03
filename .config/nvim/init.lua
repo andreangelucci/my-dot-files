@@ -40,13 +40,13 @@ vim.wo.relativenumber = true
 vim.wo.spell=true
 vim.o.spelllang="en_us"
 vim.o.spell=true
-vim.o.colorcolumn = "80"
+vim.o.colorcolumn = "88"
 vim.o.scrolloff = 5
 vim.o.signcolumn = "yes"
 vim.o.cursorline = true
 vim.o.wrap = false
 
-vim.cmd.colorscheme 'habamax'
+vim.cmd.colorscheme 'citruszest'
 
 vim.o.copilot_enabled = "v:true"
 vim.o.cmdheight = 0
@@ -166,12 +166,11 @@ end, { desc = '[/] Fuzzily search in current buffer' })
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
-vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
+-- vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
+vim.keymap.set('n', '<leader>sw', function() require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > ") }) end, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
-
-vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'LazyGit' })
 vim.keymap.set('n', '<leader>gb', require('telescope.builtin').git_branches, { desc = '[G]it [B]ranches' })
 vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = '[G]it [S]tatus' })
 
@@ -412,3 +411,12 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+lspconfig = require('lspconfig')
+lspconfig.cucumber_language_server.setup {
+  settings = {
+    features = {"src/**/features/**/*.feature", "src/test/**/*.feature","features/**/*.feature","tests/**/*.feature","*specs*/**/.feature"},
+    glues = {"src/**/features/**/*.py", "src/test/**/*.java","features/**/*.ts","features/**/*.tsx","features/**/*.php","features/**/*.py","tests/**/*.py","tests/**/*.rs","features/**/*.rs","features/**/*.rb","*specs*/**/.cs"}
+  }
+}
+

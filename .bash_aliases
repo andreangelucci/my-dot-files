@@ -11,9 +11,13 @@ alias vi=vim
 alias v=vim
 alias v.='v .'
 alias fzf='fzf-tmux'
+alias g=git
 alias gb='git branch'
 alias gs='git status'
 alias gd='git diff'
+alias pydoc='python -m pydoc'
+alias pron='say -v Junior --'
+alias cat=bat
 
 alias gpt='sgpt'
 

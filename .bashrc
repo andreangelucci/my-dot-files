@@ -24,6 +24,7 @@ FZF_TMUX=1
 
 export HISTSIZE=3000
 export HISTFILESIZE=3000
+export PAGER=bat
 
 # External Files
 . ~/.bash_aliases
